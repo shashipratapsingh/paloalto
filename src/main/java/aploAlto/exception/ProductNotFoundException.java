@@ -1,4 +1,4 @@
-package aploAlto.utill;
+package aploAlto.exception;
 
 public class ProductNotFoundException extends RuntimeException {
 

@@ -4,7 +4,7 @@ package aploAlto.service;
 
 import aploAlto.Model.Product;
 import aploAlto.repository.ProductRepository;
-import aploAlto.utill.ProductNotFoundException;
+import aploAlto.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
