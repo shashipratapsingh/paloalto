@@ -1,3 +1,4 @@
+/*
 package aploAlto.exception;
 
 import jakarta.validation.ConstraintViolationException;
@@ -11,7 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler extends RuntimeException {
+
+    public GlobalExceptionHandler(String someThingIsWrong) {
+    }
 
     // Handle validation errors
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -47,3 +51,4 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred: " + ex.getMessage());
     }
 }
+*/
