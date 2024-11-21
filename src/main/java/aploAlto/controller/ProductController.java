@@ -4,10 +4,13 @@ import aploAlto.Model.Product;
 import aploAlto.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
@@ -23,7 +26,7 @@ public class ProductController {
 
     // Get all products
     @GetMapping
-    public ResponseEntity<List<Product>> getAllProducts() {
+    public HttpEntity<Optional<List<Product>>> getAllProducts() {
         return ResponseEntity.ok(productService.getAllProducts());
     }
 

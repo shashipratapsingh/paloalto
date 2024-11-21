@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ProductService {
 
@@ -17,12 +19,16 @@ public class ProductService {
 
     // Create a new product
     public Product createProduct(Product product) {
-        return productRepository.save(product);
+        try{
+            return productRepository.save(product);
+        }catch (Exception e){
+            throw new ProductNotFoundException("Product could not empty");
+        }
     }
 
     // Get all products
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+    public Optional<List<Product>> getAllProducts() {
+        return Optional.of(productRepository.findAll());
     }
 
     // Get product by ID
